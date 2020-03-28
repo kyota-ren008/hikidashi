@@ -3,7 +3,9 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
+  #どのタイミングでshowアクションの中身を消すのか
   def show
+    @post = Post.find(params[:id])
   end
 
   def new
