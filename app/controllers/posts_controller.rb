@@ -30,6 +30,12 @@ class PostsController < ApplicationController
     redirect_to posts_url, notice: "hikidashi「#{post.name}」を更新しました。"
   end
 
+  def destroy
+    post = Post.find(params[:id])
+    post.destroy
+    redirect_to posts_url, notice: "hikidashi「#{post.name}」を削除しました。"
+  end
+
   private
   
   #受け取る情報だけを抜き取って、登録する役割

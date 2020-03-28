@@ -16,3 +16,4 @@ table.table.table-hover
         td= post.created_at
 		td
           = link_to '編集', edit_post_path(post), class: 'btn btn-primary mr-3'
+		  = link_to '削除', post, method: :delete, data: { confirm: "hikidashi「#{post.name}」を削除します。よろしいですか？"}, class: 'btn btn-danger'
