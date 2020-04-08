@@ -15,9 +15,13 @@ class PostsController < ApplicationController
   #登録フォームから送られてきたデータをデータベースに保存して、一覧画面に遷移する
   #redirect_toには特定の「Flashメッセージ」を渡すことができる。表示するためにはlayoutsに記述する
   def create
-    post = Post.new(post_params)
-    post.save!
-    redirect_to posts_url, notice: "hikidashi「#{post.name}」を登録しました。"
+    @post = Post.new(post_params)
+  
+    if @post.save
+      redirect_to @post, notice: "hikidashi「#{@post.name}」を登録しました。"
+    else
+      render :new
+    end  
   end
 
   def edit
@@ -25,9 +29,13 @@ class PostsController < ApplicationController
   end
 
   def update
-    post = Post.find(params[:id])
-    post.update!(post_params)
-    redirect_to posts_url, notice: "hikidashi「#{post.name}」を更新しました。"
+    @post = Post.find(params[:id])
+
+    if @post.update(post_params)
+      redirect_to @post, notice: "hikidashi「#{@post.name}」を更新しました。"
+    else
+      render :new
+    end
   end
 
   def destroy

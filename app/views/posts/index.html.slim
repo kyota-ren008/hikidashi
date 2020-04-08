@@ -1,19 +1,24 @@
-h1 hikidashi 投稿一覧
+.container
+  h1.display-4.my-md-2 hikidashi list
+  p.lead.small live with wisdom 〜100個の引き出しを作ろう！〜
 
-= link_to '新規登録', new_post_path, class: 'btn btn-primary'
+div style="text-align:end;" 
+  = link_to '＋', new_post_path, class: 'btn btn-success'
 
 .mb-3
 table.table.table-hover
   thead.thead-default
     tr
-	  th= Post.human_attribute_name(:name)
+      th= Post.human_attribute_name(:name)
       th= Post.human_attribute_name(:created_at)
-	  th
+      th
   tbody
     - @posts.each do |post|
       tr
         td= link_to post.name, post
         td= post.created_at
-		td
-          = link_to '編集', edit_post_path(post), class: 'btn btn-primary mr-3'
-		  = link_to '削除', post, method: :delete, data: { confirm: "hikidashi「#{post.name}」を削除します。よろしいですか？"}, class: 'btn btn-danger'
+        td align="right"
+          = link_to 'edit', edit_post_path(post), class: 'btn btn-primary mr-3'
+          = link_to 'delete', post, method: :delete, data: { confirm: "hikidashi「#{post.name}」を削除します。よろしいですか？"}, class: 'btn btn-danger'
+
+

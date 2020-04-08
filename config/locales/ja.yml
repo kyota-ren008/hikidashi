@@ -12,11 +12,11 @@ ja:
     attributes:
      post:
       id: ID
-      name: 名称
-      description: 詳しい説明
+      name: hikidashi
+      description: contents
       image: 画像
-      created_at: 登録日時
-      updated_at: 更新日時
+      created_at: created
+      updated_at: update
      user:
       name: 名称
       email: メールアドレス
@@ -160,9 +160,9 @@ ja:
     select:
       prompt: 選択してください
     submit:
-      create: 登録する
+      create: Create
       submit: 保存する
-      update: 更新する
+      update: Update
   number:
     currency:
       format:

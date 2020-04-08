@@ -1,7 +1,7 @@
-h1 タスクの詳細
+h1 Show hikidashi 
 
 .nav.justify-content-end
-  = link_to '一覧', posts_path, class: 'nav-link'
+  = link_to 'All List', posts_path, class: 'nav-link'
 table.table.table-hover
   tbody
     tr
@@ -20,5 +20,5 @@ table.table.table-hover
       th= Post.human_attribute_name(:updated_at)
       td= @post.updated_at
 
-= link_to '編集', edit_post_path, class: 'btn btn-primary mr-3'
-= link_to '削除', @post, method: :delete, data: { confirm: "hikidashi「#{@post.name}」を削除します。よろしいですか？"}, class: 'btn btn-danger'
+= link_to 'edit', edit_post_path, class: 'btn btn-primary mr-3'
+= link_to 'delete', @post, method: :delete, data: { confirm: "hikidashi「#{@post.name}」を削除します。よろしいですか？"}, class: 'btn btn-danger'
