@@ -10,6 +10,15 @@ html
   body
     .app-title.navbar.navbar-expand-md.navbar-dark.bg-dark
       .navbar-brand hikidashi
+
+      ul.navbar-nav.ml-auto
+        - if current_user
+          li.nav-item= link_to 'hikidashi List', posts_path, class: 'nav-link'
+          - if current_user.admin?
+            li.nav-item= link_to 'All User', admin_users_path, class: 'nav-link'
+          li.nav-item= link_to 'Logout', logout_path, method: :delete, class: 'nav-link'
+        - else
+          li.nav-item= link_to 'Login', login_path, class: 'nav-link'
     .container
       - if flash.notice.present?
         .alert.alert-success.my-md-3= flash.notice

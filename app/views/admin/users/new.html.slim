@@ -1,0 +1,6 @@
+h1 User Create
+
+.nav.justify-content-end
+  = link_to 'All List', admin_users_path, class: 'nav-link'
+
+= render partial: 'form',locals: { user: @user }

@@ -1,0 +1,29 @@
+h1 User Edit
+
+.nav.justify-content-end
+  = link_to 'All List', admin_users_path, class: 'nav-link'
+
+- if @user.errors.present?
+  ul#error_explanation
+    .alert.alert-danger role="alert" 
+      - @user.errors.full_messages.each do |message|
+        li= message
+
+= form_with model: [:admin, @user], local: true do |f|
+  .form-group
+    = f.label :name, 'name'
+    = f.text_field :name, class: 'form-control'
+  .form-group
+    = f.label :email, 'email'
+    = f.text_field :email, class: 'form-control'
+  .form-check
+    = f.label :admin, class: 'form-check-label' do
+     = f.check_box :admin, class: 'form-check-input'
+     | admin
+  .form-group
+    = f.label :password, 'password'
+    = f.password_field :password, class: 'form-control'
+  .form-group
+    = f.label :password_confirmation, 'password_confirmation'
+    = f.password_field :password_confirmation, class: 'form-control'
+  = f.submit 'Update', class: 'btn btn-primary'

@@ -18,13 +18,13 @@ ja:
       created_at: created
       updated_at: update
      user:
-      name: 名称
-      email: メールアドレス
-      admin: 管理者権限
-      password: パスワード
-      password_confirmation: パスワード(確認)
-      created_at: 登録日時
-      updated_at: 更新日時
+      name: name
+      email: email
+      admin: admin
+      password: password
+      password_confirmation: password_confirmation
+      created_at: created
+      updated_at: updated
   date:
     abbr_day_names:
     - 日
