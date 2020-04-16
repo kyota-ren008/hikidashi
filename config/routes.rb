@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :users
   end
+
   root to: 'posts#index'
-  resources :posts
+  resources :posts do
+    post :confirm, action: :confirm_new, on: :new
+  end
 end

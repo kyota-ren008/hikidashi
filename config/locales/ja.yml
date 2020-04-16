@@ -160,9 +160,9 @@ ja:
     select:
       prompt: 選択してください
     submit:
-      create: Create
+      create: create
       submit: 保存する
-      update: Update
+      update: update
   number:
     currency:
       format:
