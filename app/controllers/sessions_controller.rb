@@ -11,6 +11,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_to root_url, notice: 'ログインしました。'
     else
+      flash.now[:alert] = 'email / password の組み合わせが無効です。'
       render :new
     end
   end

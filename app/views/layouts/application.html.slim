@@ -22,5 +22,8 @@ html
     .container
       - if flash.notice.present?
         .alert.alert-success.my-md-3= flash.notice
+
+      - if flash.alert.present?
+        .alert.alert-danger.my-md-3= flash.alert
       = yield
 /my-md-3は検証で１remなこと確認したからmarginを指定する方法を調べた
