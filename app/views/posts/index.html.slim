@@ -1,11 +1,22 @@
-.container
-  h1.display-4.my-md-2 hikidashi list
-  p.lead.small live with wisdom 〜100個の引き出しを作ろう！〜
+h1.display-4.my-md-2 hikidashi list
+p.lead.small live with wisdom 〜100個の引き出しを作ろう！〜
 
-div style="text-align:end;" 
-  = link_to '＋', new_post_path, class: 'btn btn-success'
+br
 
-.mb-3
+div class="titlebar"
+  .subject
+    form.form-inline action="" method="" 
+      = search_form_for @q, class: 'mb-2' do |f|
+        .form-group.row
+          .col-sm-10
+            = f.search_field :name_cont, class: 'form-control'
+        .form-group
+          = f.submit 'search', class: 'btn btn-outline-primary'
+  .date
+    = link_to '＋', new_post_path, class: 'btn btn-success'
+
+br
+
 table.table.table-hover
   thead.thead-default
     tr
@@ -21,4 +32,6 @@ table.table.table-hover
           = link_to 'edit', edit_post_path(post), class: 'btn btn-primary mr-3'
           = link_to 'delete', post, method: :delete, data: { confirm: "hikidashi「#{post.name}」を削除します。よろしいですか？"}, class: 'btn btn-danger'
 
-
+.mb-3
+  = paginate @posts
+  = page_entries_info @posts

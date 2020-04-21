@@ -19,3 +19,8 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+//= jquery
+//= jquery_ujs
+
+document.addEventListener("touchstart", function(){}, true);

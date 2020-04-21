@@ -14,7 +14,7 @@ ja:
       id: ID
       name: hikidashi
       description: contents
-      image: 画像
+      image: image
       created_at: created
       updated_at: update
      user:

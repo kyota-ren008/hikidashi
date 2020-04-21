@@ -9,13 +9,15 @@ h1 New hikidashi
       - @post.errors.full_messages.each do |message|
         li= message
 
-= form_with model: @post, local: true, url: confirm_new_post_path do |f|
+= form_with model: @post, local: true do |f|
   .form-group
     = f.label :name
     = f.text_field :name, class: 'form-control', id: 'post_name'
   .form-group
     = f.label :description
     = f.text_area :description, rows: 5, class: 'form-control', id: 'post_description'
-  = f.submit 'confirm', class: 'btn btn-success'
-
+  .form-group
+    = f.label :image
+    = f.file_field :image, class: 'form-control'
+  = f.submit nil, class: 'btn btn-success'
   /登録ボタンの色を変更したいから、_form.html.slimに記述があるけどここに改めて記述した。
