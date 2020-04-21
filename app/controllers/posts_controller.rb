@@ -46,7 +46,7 @@ class PostsController < ApplicationController
   
   #受け取る情報だけを抜き取って、登録する役割
   def post_params
-    params.require(:post).permit(:name, :description)
+    params.require(:post).permit(:name, :description, :image)
   end
 
   def set_post
