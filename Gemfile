@@ -69,5 +69,4 @@ gem 'jquery-rails'
 gem "jquery-turbolinks"
 gem 'rails_autolink'
 gem 'ransack'
-gem 'font-awesome-sass', '~> 5.4.1'
 gem 'kaminari'
