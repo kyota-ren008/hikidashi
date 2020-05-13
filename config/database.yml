@@ -51,7 +51,7 @@ production:
   adapter: mysql2
   encoding: utf8
   pool: 5
-  database: pictweet_production
+  database: hikidashi_production
   username: root
-  password:
+  password: <%= ENV['DATABASE_PASSWORD'] %>
   socket: /var/lib/mysql/mysql.sock
