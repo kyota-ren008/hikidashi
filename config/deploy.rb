@@ -19,6 +19,9 @@ set :linked_files, fetch(:linked_files, []).push('config/settings.yml')
 # シンボリックリンクをはるフォルダ。(※後述)
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system')
 
+# RAILS_MASTER_KEYを読み込ませる設定
+set :linked_files, fetch(:linked_files, []).push("config/master.key")
+
 # 保持するバージョンの個数(※後述)
 set :keep_releases, 5
 
